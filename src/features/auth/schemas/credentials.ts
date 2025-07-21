@@ -1,0 +1,25 @@
+import { z } from "zod/v4";
+
+export const credentialsSchema = z.object({
+  username: z
+    .string()
+    .trim()
+    .min(3, {
+      message: "Username must be at least 3 characters long",
+    })
+    .max(30, {
+      message: "Username must be at most 30 characters long",
+    })
+    .regex(/^\w+$/, {
+      message:
+        "Username should only contain alphanumeric characters and underscores",
+    }),
+  password: z
+    .string()
+    .min(8, {
+      message: "Password must be at least 8 characters long",
+    })
+    .max(50, {
+      message: "Password must be at most 50 characters long",
+    }),
+});
