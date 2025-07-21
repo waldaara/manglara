@@ -7,7 +7,6 @@ import {
 import {
   TypographyH1,
   TypographyMuted,
-  TypographyP,
 } from "@/shared/components/ui/typography";
 import { notFound } from "next/navigation";
 
@@ -54,22 +53,6 @@ export default async function ProfilePage({
         <TypographyMuted className="text-center">
           @{data?.username}
         </TypographyMuted>
-      </div>
-
-      <div className="flex gap-3">
-        <div className="flex w-1/2 flex-col items-center justify-center rounded-xl border px-3 py-2">
-          <TypographyP className="text-xl font-bold">
-            {data?.followerCount}
-          </TypographyP>
-          <TypographyMuted>Followers</TypographyMuted>
-        </div>
-
-        <div className="flex w-1/2 flex-col items-center justify-center rounded-xl border px-3 py-2">
-          <TypographyP className="text-xl font-bold">
-            {data?.followingCount}
-          </TypographyP>
-          <TypographyMuted>Following</TypographyMuted>
-        </div>
       </div>
     </main>
   );

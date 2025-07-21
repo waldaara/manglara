@@ -70,7 +70,6 @@ export const QRCodeDialog = ({
       <DialogTrigger hidden ref={dialogTriggerRef} />
       <DialogClose hidden ref={dialogCloseRef} />
       <DialogContent
-        showCloseBtn={showBackupCodes}
         onEscapeKeyDown={(event) => event.preventDefault()}
         onInteractOutside={(event) => event.preventDefault()}
         className="flex flex-col gap-8"

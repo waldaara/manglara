@@ -35,13 +35,13 @@ export function RecoveryForm({
       <Card className="bg-background border-none shadow-none">
         <CardHeader className="text-center">
           <CardTitle>
-            <TypographyH1>Recovery code 🔐</TypographyH1>
+            <TypographyH1>Recovery code</TypographyH1>
           </CardTitle>
 
           <CardDescription>
             <TypographyP className="leading-normal">
               Enter the code from your recovery code list. Remember that each
-              code can only be used once.
+              code can only be used once 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>

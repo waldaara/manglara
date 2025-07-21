@@ -41,7 +41,7 @@ export function ForgotPasswordForm({
 
           <CardDescription>
             <TypographyP className="leading-normal">
-              Have you ever thought about using a password manager? 😒
+              Enter your email to reset your password 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>

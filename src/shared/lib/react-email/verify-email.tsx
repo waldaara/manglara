@@ -21,7 +21,7 @@ export const VerifyEmail = ({ url, name }: Props) => {
   return (
     <Html>
       <Head />
-      <Preview>bitch, we gotta be sure its really you 🧐</Preview>
+      <Preview>We gotta be sure its really you 🧐</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white px-2 font-sans">
           <Container className="mx-auto my-[40px] max-w-[465px] rounded-2xl border border-solid border-[#eaeaea] p-[20px]">

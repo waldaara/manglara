@@ -40,12 +40,12 @@ export function TwoFactorForm({
       <Card className="bg-background border-none shadow-none">
         <CardHeader className="text-center">
           <CardTitle>
-            <TypographyH1>2FA 💂</TypographyH1>
+            <TypographyH1>Two-Factor Authentication</TypographyH1>
           </CardTitle>
 
           <CardDescription>
             <TypographyP className="leading-normal">
-              Enter your one-time password to continue.
+              Enter your one-time password to continue 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>

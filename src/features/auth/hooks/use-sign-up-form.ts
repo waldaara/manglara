@@ -27,10 +27,8 @@ export const useSignUpForm = () => {
 
   const onSubmit = (variables: SignUpVariables) => signUpWithEmail(variables);
 
-  const handleSignUpWithSocial = (provider: "google" | "github") =>
+  const handleSignUpWithSocial = (provider: "google") =>
     signUpWithSocial({ provider });
-
-  const handleSignUpWithGithub = () => handleSignUpWithSocial("github");
 
   const handleSignUpWithGoogle = () => handleSignUpWithSocial("google");
 
@@ -38,7 +36,6 @@ export const useSignUpForm = () => {
     form,
     onSubmit,
     isPending: isSigningUpWithEmail || isSigningUpWithSocial,
-    handleSignUpWithGithub,
     handleSignUpWithGoogle,
   };
 };

@@ -14,10 +14,7 @@ export const useSignInForm = () => {
 
   const { mutate, isPending } = useSignInSocialMutation();
 
-  const handleSignInWithSocial = (provider: "google" | "github") =>
-    mutate({ provider });
-
-  const handleSignInWithGitHub = () => handleSignInWithSocial("github");
+  const handleSignInWithSocial = (provider: "google") => mutate({ provider });
 
   const handleSignInWithGoogle = () => handleSignInWithSocial("google");
 
@@ -47,7 +44,6 @@ export const useSignInForm = () => {
     setSignInMethod,
     toggleSignInMethod,
     toggleSignInMethodButtonContent,
-    handleSignInWithGitHub,
     handleSignInWithGoogle,
   };
 };

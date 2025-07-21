@@ -42,7 +42,7 @@ export function ResetPasswordForm({
 
           <CardDescription>
             <TypographyP className="leading-normal">
-              You better remember it this time! 🫵
+              Enter your new password to reset your account 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>
