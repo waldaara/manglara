@@ -1,6 +1,6 @@
 "use client";
 
-import { BellRingIcon, KeyRoundIcon, UserRoundPenIcon } from "lucide-react";
+import { KeyRoundIcon, UserRoundPenIcon } from "lucide-react";
 
 import { SettingsNavLink } from "@/features/settings/components/settings-nav-link";
 import { useSettingsInMobile } from "@/features/settings/hooks/use-settings-in-mobile";
@@ -15,11 +15,6 @@ const items = [
     label: "Security",
     href: "/settings/security",
     icon: <KeyRoundIcon />,
-  },
-  {
-    label: "Notifications",
-    href: "/settings/notifications",
-    icon: <BellRingIcon />,
   },
 ];
 

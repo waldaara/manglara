@@ -26,7 +26,7 @@ export default function SettingsLayout({
           <TypographyH1>Settings</TypographyH1>
 
           <TypographyMuted>
-            Manage your account settings and set e-mail preferences.
+            Manage your account settings and preferences. 🌴
           </TypographyMuted>
         </div>
       </MobileWrapper>

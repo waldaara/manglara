@@ -1,8 +1,9 @@
 "use server";
 
-import { auth } from "@/shared/lib/better-auth/server";
-import { ActionResponse } from "@/shared/types";
 import { headers } from "next/headers";
+
+import { auth } from "@/shared/lib/better-auth/server";
+import type { ActionResponse } from "@/shared/types";
 
 type ErrorCode = "UNAUTHORIZED" | "FORBIDDEN" | "INTERNAL_SERVER_ERROR";
 

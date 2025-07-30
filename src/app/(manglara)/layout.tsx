@@ -7,7 +7,6 @@ import {
 
 import { AppSidebar } from "@/shared/components/app-sidebar";
 import { auth } from "@/shared/lib/better-auth/server";
-import { SESSION_QUERY_KEY } from "@/shared/lib/react-query/query-key-factory";
 
 export default async function StoriesLayout({
   children,
@@ -17,7 +16,7 @@ export default async function StoriesLayout({
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: [SESSION_QUERY_KEY],
+    queryKey: ["session", "detail"],
     queryFn: async () => {
       const session = await auth.api.getSession({
         headers: await headers(),
@@ -32,7 +31,7 @@ export default async function StoriesLayout({
       <div className="flex h-svh gap-6 overflow-hidden px-2 py-4 sm:px-6 sm:py-8 md:p-10">
         <AppSidebar />
 
-        <main className="h-full flex-1">{children}</main>
+        <main className="h-full w-1 flex-1 overflow-hidden">{children}</main>
       </div>
     </HydrationBoundary>
   );

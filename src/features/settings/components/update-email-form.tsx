@@ -13,9 +13,9 @@ import {
   FormMessage,
 } from "@/shared/components/ui/form";
 import { Input } from "@/shared/components/ui/input";
+import { Skeleton } from "@/shared/components/ui/skeleton";
 
 import { useUpdateEmailForm } from "@/features/settings/hooks/use-update-email-form";
-import { Skeleton } from "@/shared/components/ui/skeleton";
 
 export function UpdateEmailForm() {
   const {

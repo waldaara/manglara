@@ -4,8 +4,6 @@ import { toast } from "sonner";
 import { authClient } from "@/shared/lib/better-auth/client";
 import type { AuthClientError, Session } from "@/shared/types";
 
-import { SESSIONS_QUERY_KEY } from "@/features/settings/lib/react-query/query-keys";
-
 export const useRevokeSessionMutation = () => {
   const queryClient = useQueryClient();
 
@@ -21,16 +19,17 @@ export const useRevokeSessionMutation = () => {
     onMutate: async (token) => {
       // Cancel any outgoing refetches
       // (so they don't overwrite our optimistic update)
-      await queryClient.cancelQueries({ queryKey: [SESSIONS_QUERY_KEY] });
+      await queryClient.cancelQueries({ queryKey: ["session", "list"] });
 
       // Snapshot the previous value
       const previousSessions = queryClient.getQueryData<Session["session"][]>([
-        SESSIONS_QUERY_KEY,
+        "session",
+        "list",
       ]);
 
       // Optimistically update to the new value
       queryClient.setQueryData(
-        [SESSIONS_QUERY_KEY],
+        ["session", "list"],
         (old: Session["session"][]) =>
           old.filter((session) => session.token !== token),
       );
@@ -41,7 +40,7 @@ export const useRevokeSessionMutation = () => {
     // If the mutation fails,
     // use the context returned from onMutate to roll back
     onError: (error: AuthClientError, _token, context) => {
-      queryClient.setQueryData([SESSIONS_QUERY_KEY], context?.previousSessions);
+      queryClient.setQueryData(["session", "list"], context?.previousSessions);
 
       switch (error.code) {
         case "SESSION_NOT_FOUND":
@@ -59,7 +58,7 @@ export const useRevokeSessionMutation = () => {
     },
     // Always refetch after error or success:
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: [SESSIONS_QUERY_KEY] });
+      queryClient.invalidateQueries({ queryKey: ["session", "list"] });
     },
   });
 };

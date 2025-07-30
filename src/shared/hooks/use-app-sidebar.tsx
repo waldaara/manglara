@@ -2,9 +2,9 @@ import { useMemo } from "react";
 import {
   HomeIcon,
   SearchIcon,
-  BellIcon,
   UserRoundIcon,
   SettingsIcon,
+  UserRoundCogIcon,
 } from "lucide-react";
 
 import { useSession } from "@/shared/hooks/use-session";
@@ -19,8 +19,8 @@ export const useAppSidebar = () => {
     isRefetching: isSessionRefetching,
   } = useSession();
 
-  const links = useMemo(
-    () => [
+  const links = useMemo(() => {
+    const baseLinks = [
       { href: "/home", label: "Home", icon: <HomeIcon /> },
       {
         href: "/explore",
@@ -28,23 +28,30 @@ export const useAppSidebar = () => {
         icon: <SearchIcon />,
       },
       {
-        href: "/notifications",
-        label: "Notifications",
-        icon: <BellIcon />,
-      },
-      {
-        href: `/${session?.user.username}`,
-        label: "Profile",
-        icon: <UserRoundIcon />,
-      },
-      {
         href: "/settings",
         label: "Settings",
         icon: <SettingsIcon />,
       },
-    ],
-    [session?.user.username],
-  );
+    ];
+
+    if (session?.user.role === "admin") {
+      baseLinks.splice(-1, 0, {
+        href: "/admin",
+        label: "Admin",
+        icon: <UserRoundCogIcon />,
+      });
+    }
+
+    if (session?.user.role === "user") {
+      baseLinks.splice(-1, 0, {
+        href: `/${session.user.username}`,
+        label: "Profile",
+        icon: <UserRoundIcon />,
+      });
+    }
+
+    return baseLinks;
+  }, [session?.user.username, session?.user.role]);
 
   return {
     links,

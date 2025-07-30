@@ -1,6 +1,6 @@
 "use client";
 
-import { LoaderIcon, RotateCcwIcon } from "lucide-react";
+import { LoaderIcon, RotateCcwIcon, TreePalmIcon } from "lucide-react";
 
 import { TypographyLarge } from "@/shared/components/ui/typography";
 import { NavLink } from "@/shared/components/nav-link";
@@ -22,8 +22,8 @@ export const AppSidebar = () => {
 
   return (
     <div className="flex flex-col items-center gap-4 md:items-stretch">
-      <TypographyLarge className="text-4xl font-extrabold">
-        M<span className="hidden md:inline">anglara</span>
+      <TypographyLarge className="pl-2 text-center text-4xl font-extrabold">
+        <TreePalmIcon className="size-10" />
       </TypographyLarge>
 
       <nav className="flex flex-col items-start gap-2 md:items-stretch">

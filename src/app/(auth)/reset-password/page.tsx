@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Suspense, use } from "react";
-import { GalleryVerticalEnd } from "lucide-react";
+import { TreePalmIcon } from "lucide-react";
 
 import { ResetPasswordForm } from "@/features/auth/components/reset-password-form";
 
@@ -32,7 +32,7 @@ export default function ForgotPasswordPage({
         className="flex items-center gap-2 self-center font-medium"
       >
         <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-          <GalleryVerticalEnd className="size-4" />
+          <TreePalmIcon className="size-4" />
         </div>
         Manglara
       </Link>

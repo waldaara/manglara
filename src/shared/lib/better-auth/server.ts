@@ -7,6 +7,7 @@ import {
   magicLink,
   twoFactor,
   haveIBeenPwned,
+  admin,
 } from "better-auth/plugins";
 
 import { BASE_URL } from "@/shared/constants";
@@ -73,6 +74,7 @@ export const auth = betterAuth({
     }),
     twoFactor(),
     haveIBeenPwned(),
+    admin(),
   ],
   user: {
     changeEmail: {

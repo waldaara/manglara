@@ -1,6 +1,4 @@
-import { z } from "zod/v4";
-
-import { updateNotificationsSchema } from "@/features/settings/schemas/update-notifications";
+import { z } from "zod";
 
 import { updateNameSchema } from "@/features/settings/schemas/update-name";
 import { updateUsernameSchema } from "@/features/settings/schemas/update-username";
@@ -9,10 +7,6 @@ import { updateEmailSchema } from "@/features/settings/schemas/update-email";
 import { updatePasswordSchema } from "@/features/settings/schemas/update-password";
 import { updateTwoFactorSchema } from "@/features/settings/schemas/update-two-factor";
 import { generateBackupCodesSchema } from "@/features/settings/schemas/generate-backup-codes";
-
-export type UpdateNotificationsVariables = z.infer<
-  typeof updateNotificationsSchema
->;
 
 export type UpdateNameVariables = z.infer<typeof updateNameSchema>;
 export type UpdateUsernameVariables = z.infer<typeof updateUsernameSchema>;

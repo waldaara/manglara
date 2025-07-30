@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { GalleryVerticalEnd } from "lucide-react";
+import { TreePalmIcon } from "lucide-react";
 
 import { SignUpForm } from "@/features/auth/components/sign-up-form";
 
@@ -17,7 +17,7 @@ export default function SignUpPage() {
         className="flex items-center gap-2 self-center font-medium"
       >
         <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-          <GalleryVerticalEnd className="size-4" />
+          <TreePalmIcon className="size-4" />
         </div>
         Manglara
       </Link>

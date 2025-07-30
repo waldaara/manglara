@@ -4,7 +4,6 @@ import { toast } from "sonner";
 
 import { RATE_LIMIT_ERROR_CODE } from "@/shared/constants";
 import { authClient } from "@/shared/lib/better-auth/client";
-import { SESSION_QUERY_KEY } from "@/shared/lib/react-query/query-key-factory";
 import type { AuthClientError } from "@/shared/types";
 
 import type { UpdateEmailVariables } from "@/features/settings/types";
@@ -53,9 +52,7 @@ export const useUpdateEmailMutation = ({ form }: Props) => {
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries({
-        queryKey: [SESSION_QUERY_KEY],
-      });
+      queryClient.invalidateQueries({ queryKey: ["session", "detail"] });
     },
   });
 };

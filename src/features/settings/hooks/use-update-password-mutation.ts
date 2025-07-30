@@ -4,10 +4,8 @@ import { toast } from "sonner";
 
 import { RATE_LIMIT_ERROR_CODE } from "@/shared/constants";
 import { authClient } from "@/shared/lib/better-auth/client";
-import { SESSION_QUERY_KEY } from "@/shared/lib/react-query/query-key-factory";
 import type { AuthClientError } from "@/shared/types";
 
-import { SESSIONS_QUERY_KEY } from "@/features/settings/lib/react-query/query-keys";
 import type { UpdatePasswordVariables } from "@/features/settings/types";
 
 interface Props {
@@ -64,8 +62,8 @@ export const useUpdatePasswordMutation = ({ form }: Props) => {
     },
     onSettled: () => {
       Promise.all([
-        queryClient.invalidateQueries({ queryKey: [SESSION_QUERY_KEY] }),
-        queryClient.invalidateQueries({ queryKey: [SESSIONS_QUERY_KEY] }),
+        queryClient.invalidateQueries({ queryKey: ["session", "detail"] }),
+        queryClient.invalidateQueries({ queryKey: ["session", "list"] }),
       ]);
     },
   });

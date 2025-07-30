@@ -4,7 +4,6 @@ import { toast } from "sonner";
 
 import { RATE_LIMIT_ERROR_CODE } from "@/shared/constants";
 import { authClient } from "@/shared/lib/better-auth/client";
-import { SESSION_QUERY_KEY } from "@/shared/lib/react-query/query-key-factory";
 import type { AuthClientError, Session } from "@/shared/types";
 
 import type { UpdateNameVariables } from "@/features/settings/types";
@@ -29,7 +28,7 @@ export const useUpdateNameMutation = ({ form }: Props) => {
         duration: 10_000,
       });
 
-      queryClient.setQueryData([SESSION_QUERY_KEY], (old: Session) => ({
+      queryClient.setQueryData(["session", "detail"], (old: Session) => ({
         ...old,
         user: {
           ...old.user,
@@ -52,7 +51,7 @@ export const useUpdateNameMutation = ({ form }: Props) => {
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: [SESSION_QUERY_KEY] });
+      queryClient.invalidateQueries({ queryKey: ["session", "detail"] });
     },
   });
 };

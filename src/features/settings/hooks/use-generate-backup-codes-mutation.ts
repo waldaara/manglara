@@ -3,7 +3,6 @@ import { UseFormReturn } from "react-hook-form";
 import { toast } from "sonner";
 
 import { authClient } from "@/shared/lib/better-auth/client";
-import { SESSION_QUERY_KEY } from "@/shared/lib/react-query/query-key-factory";
 
 import { getTxtArrayBuffer } from "@/features/settings/utils/get-txt-array-buffer";
 import type { GenerateBackupCodesVariables } from "@/features/settings/types";
@@ -53,7 +52,7 @@ export const useGenerateBackupCodesMutation = ({ form }: Props) => {
       });
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: [SESSION_QUERY_KEY] });
+      queryClient.invalidateQueries({ queryKey: ["session", "detail"] });
     },
   });
 };

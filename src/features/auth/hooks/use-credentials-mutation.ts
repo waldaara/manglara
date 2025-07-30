@@ -49,6 +49,13 @@ export const useCredentialsMutation = ({ form }: Props) => {
           });
           return;
 
+        case "BANNED_USER":
+          toast.error("You are banned from the platform 😢", {
+            description: "Please contact the administrator.",
+            duration: 20_000,
+          });
+          return;
+
         case "EMAIL_NOT_VERIFIED":
           toast.error("Verify your email to sign in 📧", {
             description:

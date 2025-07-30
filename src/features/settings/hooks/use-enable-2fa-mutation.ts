@@ -5,7 +5,6 @@ import { toast } from "sonner";
 
 import { RATE_LIMIT_ERROR_CODE } from "@/shared/constants";
 import { authClient } from "@/shared/lib/better-auth/client";
-import { SESSION_QUERY_KEY } from "@/shared/lib/react-query/query-key-factory";
 import type { AuthClientError, Session } from "@/shared/types";
 
 import type { UpdateTwoFactorVariables } from "@/features/settings/types";
@@ -42,12 +41,15 @@ export const useEnable2FAMutation = ({
       setBackupCodes(data.backupCodes);
       dialogTriggerRef.current?.click();
 
-      queryClient.setQueryData([SESSION_QUERY_KEY], (old: Session): Session => {
-        return {
-          session: old.session,
-          user: { ...old.user, twoFactorEnabled: true },
-        };
-      });
+      queryClient.setQueryData(
+        ["session", "detail"],
+        (old: Session): Session => {
+          return {
+            session: old.session,
+            user: { ...old.user, twoFactorEnabled: true },
+          };
+        },
+      );
 
       form.reset({ enable2FA: true });
     },
@@ -68,13 +70,5 @@ export const useEnable2FAMutation = ({
           return;
       }
     },
-    // Always refetch after error or success, but
-    // in this case we will do it after verifying the TOTP
-    // because the session will be updated AFTER the TOTP is verified
-    // onSettled: () =>
-    //   Promise.all([
-    //     queryClient.invalidateQueries({ queryKey: [SESSION_QUERY_KEY] }),
-    //     queryClient.invalidateQueries({ queryKey: ["sessions"] }),
-    //   ]),
   });
 };
