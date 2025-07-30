@@ -51,9 +51,7 @@ export const useUpdateUserMutation = ({ pagination }: Props) => {
 
       toast.success("User updated successfully 🔄");
     },
-    onError: (error) => {
-      console.log(error);
-
+    onError: () => {
       toast.error("Failed to update user 😢", {
         description: "Please try again later",
       });

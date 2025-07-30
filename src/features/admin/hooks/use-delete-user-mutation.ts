@@ -21,9 +21,7 @@ export const useDeleteUserMutation = ({ pagination }: Props) => {
 
       if (error) return Promise.reject(error);
     },
-    onError: (error) => {
-      console.log("error", error);
-
+    onError: () => {
       toast.error("Failed to delete user 😢", {
         description: "Please try again later",
       });
