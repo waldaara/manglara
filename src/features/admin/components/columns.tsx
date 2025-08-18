@@ -3,6 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { CircleXIcon, UserRoundCogIcon, UserRoundIcon } from "lucide-react";
 import { format, formatDistanceToNow } from "date-fns";
+import { es } from "date-fns/locale";
 
 import { Badge } from "@/shared/components/ui/badge";
 import type { User } from "@/shared/types";
@@ -16,21 +17,21 @@ import {
 } from "@/shared/components/ui/tooltip";
 
 export const columns: ColumnDef<User>[] = [
-  {
-    accessorKey: "id",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Id" />
-    ),
-    cell: ({ row }) => (
-      <div className="ml-2.5 flex space-x-2">
-        <span className="w-fit font-medium">{row.getValue("id")}</span>
-      </div>
-    ),
-  },
+  // {
+  //   accessorKey: "id",
+  //   header: ({ column }) => (
+  //     <DataTableColumnHeader column={column} title="Id" />
+  //   ),
+  //   cell: ({ row }) => (
+  //     <div className="ml-2.5 flex space-x-2">
+  //       <span className="w-fit font-medium">{row.getValue("id")}</span>
+  //     </div>
+  //   ),
+  // },
   {
     accessorKey: "name",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Name" />
+      <DataTableColumnHeader column={column} title="Nombre" />
     ),
     cell: ({ row }) => {
       const isBanned =
@@ -46,19 +47,23 @@ export const columns: ColumnDef<User>[] = [
             <Tooltip>
               <TooltipTrigger className="cursor-pointer">
                 <Badge variant="destructive" className="text-xs">
-                  banned
+                  bloqueado
                 </Badge>
               </TooltipTrigger>
               <TooltipContent className="flex flex-col gap-1">
                 <span>
-                  <b>Reason:</b> {row.original.banReason}
+                  <b>Motivo:</b> {row.original.banReason}
                 </span>
 
                 <span>
-                  <b>Expires:</b>{" "}
+                  <b>Expira:</b>{" "}
                   {row.original.banExpires
-                    ? `${format(row.original.banExpires, "PPP, HH:mm")} (${formatDistanceToNow(row.original.banExpires)})`
-                    : "Never"}
+                    ? `${format(row.original.banExpires, "PPP, HH:mm", {
+                        locale: es,
+                      })} (${formatDistanceToNow(row.original.banExpires, {
+                        locale: es,
+                      })})`
+                    : "Nunca"}
                 </span>
               </TooltipContent>
             </Tooltip>
@@ -70,7 +75,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "email",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Email" />
+      <DataTableColumnHeader column={column} title="Correo electrónico" />
     ),
     cell: ({ row }) => {
       const isEmailVerified = row.original.emailVerified;
@@ -85,7 +90,7 @@ export const columns: ColumnDef<User>[] = [
                 <CircleXIcon className="text-destructive size-4" />
               </TooltipTrigger>
               <TooltipContent>
-                <p>Email not verified</p>
+                <p>Correo electrónico no verificado</p>
               </TooltipContent>
             </Tooltip>
           )}
@@ -100,7 +105,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "username",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Username" />
+      <DataTableColumnHeader column={column} title="Usuario" />
     ),
     cell: ({ row }) => {
       return (
@@ -113,7 +118,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "role",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Role" />
+      <DataTableColumnHeader column={column} title="Rol" />
     ),
     cell: ({ row }) => {
       const role = row.getValue("role") as string;
@@ -139,7 +144,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "createdAt",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Created At" />
+      <DataTableColumnHeader column={column} title="Creado el" />
     ),
     cell: ({ row }) => {
       return (
@@ -147,11 +152,15 @@ export const columns: ColumnDef<User>[] = [
           <Tooltip>
             <TooltipTrigger className="cursor-pointer">
               <span className="w-max font-medium">
-                {format(row.getValue("createdAt") as Date, "PPP, HH:mm")}
+                {format(row.getValue("createdAt") as Date, "PPP, HH:mm", {
+                  locale: es,
+                })}
               </span>
             </TooltipTrigger>
             <TooltipContent>
-              {formatDistanceToNow(row.getValue("createdAt") as Date)}
+              {formatDistanceToNow(row.getValue("createdAt") as Date, {
+                locale: es,
+              })}
             </TooltipContent>
           </Tooltip>
         </div>
@@ -161,7 +170,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "updatedAt",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Updated At" />
+      <DataTableColumnHeader column={column} title="Actualizado el" />
     ),
     cell: ({ row }) => {
       return (
@@ -169,11 +178,15 @@ export const columns: ColumnDef<User>[] = [
           <Tooltip>
             <TooltipTrigger className="cursor-pointer">
               <span className="w-max font-medium">
-                {format(row.getValue("updatedAt") as Date, "PPP, HH:mm")}
+                {format(row.getValue("updatedAt") as Date, "PPP, HH:mm", {
+                  locale: es,
+                })}
               </span>
             </TooltipTrigger>
             <TooltipContent>
-              {formatDistanceToNow(row.getValue("updatedAt") as Date)}
+              {formatDistanceToNow(row.getValue("updatedAt") as Date, {
+                locale: es,
+              })}
             </TooltipContent>
           </Tooltip>
         </div>

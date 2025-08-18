@@ -5,33 +5,33 @@ export const resetPasswordSchema = z
     password: z
       .string()
       .min(8, {
-        message: "Password must be at least 8 characters long",
+        message: "La contraseña debe tener al menos 8 caracteres",
       })
       .max(50, {
-        message: "Password must be at most 50 characters long",
+        message: "La contraseña debe tener menos de 50 caracteres",
       })
       .regex(/[0-9]/, {
-        message: "Password must contain at least one number",
+        message: "La contraseña debe contener al menos un número",
       })
       .regex(/[a-z]/, {
-        message: "Password must contain at least one lowercase letter",
+        message: "La contraseña debe contener al menos una letra minúscula",
       })
       .regex(/[A-Z]/, {
-        message: "Password must contain at least one uppercase letter",
+        message: "La contraseña debe contener al menos una letra mayúscula",
       })
       .regex(/[^\w\s]/, {
-        message: "Password must contain at least one special character",
+        message: "La contraseña debe contener al menos un carácter especial",
       }),
     confirmPassword: z
       .string()
       .min(8, {
-        message: "Password must be at least 8 characters long",
+        message: "La contraseña debe tener al menos 8 caracteres",
       })
       .max(50, {
-        message: "Password must be at most 50 characters long",
+        message: "La contraseña debe tener menos de 50 caracteres",
       }),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
+    message: "Las contraseñas no coinciden",
     path: ["confirmPassword"],
   });

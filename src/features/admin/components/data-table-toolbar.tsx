@@ -22,7 +22,7 @@ export function DataTableToolbar<TData>({
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter users..."
+          placeholder="Filtrar usuarios..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
@@ -32,30 +32,30 @@ export function DataTableToolbar<TData>({
         {table.getColumn("role") && (
           <DataTableFacetedFilter
             column={table.getColumn("role")}
-            title="Role"
+            title="Rol"
             options={[
-              { label: "Admin", value: "admin" },
-              { label: "User", value: "user" },
+              { label: "Administrador", value: "admin" },
+              { label: "Usuario", value: "user" },
             ]}
           />
         )}
         {table.getColumn("banned") && (
           <DataTableFacetedFilter
             column={table.getColumn("banned")}
-            title="Banned"
+            title="Bloqueado"
             options={[
-              { label: "Banned", value: "true" },
-              { label: "Not Banned", value: "false" },
+              { label: "Bloqueado", value: "true" },
+              { label: "No bloqueado", value: "false" },
             ]}
           />
         )}
         {table.getColumn("emailVerified") && (
           <DataTableFacetedFilter
             column={table.getColumn("emailVerified")}
-            title="Email Verified"
+            title="Correo verificado"
             options={[
-              { label: "Verified", value: "true" },
-              { label: "Not Verified", value: "false" },
+              { label: "Verificado", value: "true" },
+              { label: "No verificado", value: "false" },
             ]}
           />
         )}
@@ -65,7 +65,7 @@ export function DataTableToolbar<TData>({
             onClick={() => table.resetColumnFilters()}
             className="h-8 px-2 lg:px-3"
           >
-            Reset
+            Restablecer
             <X />
           </Button>
         )}

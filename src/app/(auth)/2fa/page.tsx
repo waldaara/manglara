@@ -6,7 +6,7 @@ import { TwoFactorForm } from "@/features/auth/components/two-factor-form";
 
 export const metadata: Metadata = {
   title: "Manglara | 2FA",
-  description: "2FA for your account",
+  description: "2FA para tu cuenta",
 };
 
 export default function TwoFactorPage() {

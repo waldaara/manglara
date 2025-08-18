@@ -25,9 +25,9 @@ export const useUpdateEmailMutation = ({ form }: Props) => {
       if (error) return Promise.reject(error);
     },
     onSuccess: (_data, variables) => {
-      toast.success("Change email verification 💂", {
+      toast.success("Verificación de cambio de correo 💂", {
         description:
-          "We sent a confirmation to your old email address. Please check your inbox (or spam folder) to approve the changes in order to update it.",
+          "Hemos enviado una confirmación a tu dirección de correo electrónico antigua. Por favor, revisa tu bandeja de entrada (o carpeta de spam) para aprobar los cambios y actualizarla.",
         duration: 20_000,
       });
 
@@ -39,13 +39,13 @@ export const useUpdateEmailMutation = ({ form }: Props) => {
       switch (error.code) {
         case "COULDNT_UPDATE_YOUR_EMAIL":
           form.setError("email", {
-            message: "A user with that email already exists",
+            message: "Un usuario con ese correo electrónico ya existe",
           });
           return;
 
         default:
-          toast.error("Something went wrong 😢", {
-            description: "Please try again later",
+          toast.error("Algo salió mal 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

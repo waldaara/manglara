@@ -49,11 +49,11 @@ export const useUpdateUserMutation = ({ pagination }: Props) => {
         }),
       );
 
-      toast.success("User updated successfully 🔄");
+      toast.success("Usuario actualizado exitosamente 🔄");
     },
     onError: () => {
-      toast.error("Failed to update user 😢", {
-        description: "Please try again later",
+      toast.error("No se pudo actualizar al usuario 😢", {
+        description: "Por favor, inténtelo de nuevo más tarde.",
       });
     },
     onSettled: () => {

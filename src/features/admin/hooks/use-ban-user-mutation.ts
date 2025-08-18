@@ -45,11 +45,11 @@ export const useBanUserMutation = ({ pagination }: Props) => {
         }),
       );
 
-      toast.success("User banned successfully 🚫");
+      toast.success("Usuario bloqueado exitosamente 🚫");
     },
     onError: () => {
-      toast.error("Failed to ban user 😢", {
-        description: "Please try again later",
+      toast.error("No se pudo bloquear al usuario 😢", {
+        description: "Por favor, inténtelo de nuevo más tarde.",
       });
     },
     onSettled: () => {

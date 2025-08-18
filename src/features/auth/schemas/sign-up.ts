@@ -5,45 +5,45 @@ export const signUpSchema = z.object({
     .string()
     .trim()
     .min(2, {
-      message: "Name must be at least 2 characters long",
+      message: "El nombre debe tener al menos 2 caracteres",
     })
     .max(50, {
-      message: "Name must be at most 50 characters long",
+      message: "El nombre debe tener menos de 50 caracteres",
     }),
   username: z
     .string()
     .trim()
     .min(3, {
-      message: "Username must be at least 3 characters long",
+      message: "El nombre de usuario debe tener al menos 3 caracteres",
     })
     .max(30, {
-      message: "Username must be at most 30 characters long",
+      message: "El nombre de usuario debe tener menos de 30 caracteres",
     })
     .regex(/^[a-zA-Z0-9_]+$/, {
       message:
-        "Username should only contain alphanumeric characters and underscores",
+        "El nombre de usuario debe contener solo caracteres alfanuméricos y guiones bajos",
     }),
   email: z.email({
-    message: "Email must be a valid email address",
+    message: "El correo electrónico debe ser una dirección de correo válida",
   }),
   password: z
     .string()
     .min(8, {
-      message: "Password must be at least 8 characters long",
+      message: "La contraseña debe tener al menos 8 caracteres",
     })
     .max(50, {
-      message: "Password must be at most 50 characters long",
+      message: "La contraseña debe tener menos de 50 caracteres",
     })
     .regex(/[0-9]/, {
-      message: "Password must contain at least one number",
+      message: "La contraseña debe contener al menos un número",
     })
     .regex(/[a-z]/, {
-      message: "Password must contain at least one lowercase letter",
+      message: "La contraseña debe contener al menos una letra minúscula",
     })
     .regex(/[A-Z]/, {
-      message: "Password must contain at least one uppercase letter",
+      message: "La contraseña debe contener al menos una letra mayúscula",
     })
     .regex(/[^\w\s]/, {
-      message: "Password must contain at least one special character",
+      message: "La contraseña debe contener al menos un carácter especial",
     }),
 });

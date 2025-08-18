@@ -5,21 +5,21 @@ export const credentialsSchema = z.object({
     .string()
     .trim()
     .min(3, {
-      message: "Username must be at least 3 characters long",
+      message: "El nombre de usuario debe tener al menos 3 caracteres",
     })
     .max(30, {
-      message: "Username must be at most 30 characters long",
+      message: "El nombre de usuario debe tener menos de 30 caracteres",
     })
     .regex(/^\w+$/, {
       message:
-        "Username should only contain alphanumeric characters and underscores",
+        "El nombre de usuario debe contener solo caracteres alfanuméricos y guiones bajos",
     }),
   password: z
     .string()
     .min(8, {
-      message: "Password must be at least 8 characters long",
+      message: "La contraseña debe tener al menos 8 caracteres",
     })
     .max(50, {
-      message: "Password must be at most 50 characters long",
+      message: "La contraseña debe tener menos de 50 caracteres",
     }),
 });

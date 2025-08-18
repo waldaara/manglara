@@ -13,9 +13,9 @@ export default function ExplorePage() {
   return (
     <main className="flex flex-col gap-6">
       <div className="space-y-2">
-        <TypographyH1>Explore</TypographyH1>
+        <TypographyH1>Explorar</TypographyH1>
 
-        <TypographyMuted>Explore the world of Manglara. 🌴</TypographyMuted>
+        <TypographyMuted>Explora el mundo de Manglara. 🌴</TypographyMuted>
       </div>
     </main>
   );

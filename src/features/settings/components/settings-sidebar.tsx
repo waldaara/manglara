@@ -7,12 +7,12 @@ import { useSettingsInMobile } from "@/features/settings/hooks/use-settings-in-m
 
 const items = [
   {
-    label: "Account",
+    label: "Cuenta",
     href: "/settings/account",
     icon: <UserRoundPenIcon />,
   },
   {
-    label: "Security",
+    label: "Seguridad",
     href: "/settings/security",
     icon: <KeyRoundIcon />,
   },

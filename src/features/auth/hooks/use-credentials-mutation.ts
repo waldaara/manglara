@@ -42,30 +42,32 @@ export const useCredentialsMutation = ({ form }: Props) => {
       switch (error.code) {
         case "INVALID_USERNAME_OR_PASSWORD":
           form.setError("username", {
-            message: "Invalid username or password.",
+            message: "Usuario o contraseña inválidos.",
           });
           form.setError("password", {
-            message: "Invalid username or password.",
+            message: "Usuario o contraseña inválidos.",
           });
           return;
 
         case "BANNED_USER":
-          toast.error("You are banned from the platform 😢", {
-            description: "Please contact the administrator.",
+          toast.error("Estás bloqueado de la plataforma 😢", {
+            description: "Por favor, contacta al administrador.",
             duration: 20_000,
           });
           return;
 
         case "EMAIL_NOT_VERIFIED":
-          toast.error("Verify your email to sign in 📧", {
+          toast.error("Verifica tu correo electrónico para iniciar sesión 📧", {
             description:
-              "Check your inbox (or spam folder) for the verification email.",
+              "Revisa tu bandeja de entrada (o carpeta de spam) para el correo de verificación.",
             duration: 10000,
           });
           return;
 
         default:
-          toast.error("Something went wrong, please try again later 😢");
+          toast.error(
+            "Algo salió mal, por favor, inténtalo de nuevo más tarde 😢",
+          );
           return;
       }
     },

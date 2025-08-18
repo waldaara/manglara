@@ -26,7 +26,9 @@ export const useSignUpSocialMutation = () => {
     onError: (error: AuthClientError, { provider }) => {
       if (error.status === RATE_LIMIT_ERROR_CODE) return;
 
-      toast.error(`Failed to sign up with ${provider} 😢`);
+      toast.error(`No se pudo registrarse con ${provider} 😢`, {
+        description: "Por favor, inténtalo de nuevo más tarde.",
+      });
     },
   });
 };

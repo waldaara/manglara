@@ -47,7 +47,7 @@ export function UpdateEmailForm() {
           render={({ field }) => (
             <FormItem>
               <div className="flex flex-wrap items-center justify-start gap-2">
-                <FormLabel>Email</FormLabel>
+                <FormLabel>Correo electrónico</FormLabel>
 
                 {isSessionLoading && <Skeleton className="h-8 w-[200px]" />}
 
@@ -57,7 +57,7 @@ export function UpdateEmailForm() {
                     type="button"
                     onClick={() => refetchSession()}
                   >
-                    Retry{" "}
+                    Reintentar{" "}
                     {isSessionRefetching ? (
                       <LoaderIcon className="animate-spin" />
                     ) : (
@@ -88,8 +88,8 @@ export function UpdateEmailForm() {
               </div>
 
               <FormDescription className="text-muted-foreground text-sm">
-                This is the email address we will use to contact you. It will
-                not be publicly visible.
+                Esta es la dirección de correo electrónico que usaremos para
+                contactarte. No será visible públicamente.
               </FormDescription>
 
               <FormMessage />

@@ -47,7 +47,7 @@ export function UpdateUsernameForm() {
           render={({ field }) => (
             <FormItem>
               <div className="flex flex-wrap items-center justify-start gap-2">
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Usuario</FormLabel>
 
                 {isSessionLoading && <Skeleton className="h-8 w-[200px]" />}
 
@@ -57,7 +57,7 @@ export function UpdateUsernameForm() {
                     type="button"
                     onClick={() => refetchSession()}
                   >
-                    Retry{" "}
+                    Reintentar{" "}
                     {isSessionRefetching ? (
                       <LoaderIcon className="animate-spin" />
                     ) : (
@@ -88,8 +88,8 @@ export function UpdateUsernameForm() {
               </div>
 
               <FormDescription className="text-muted-foreground text-sm">
-                This is your public display username. It can be your real name
-                or a pseudonym.
+                Este es tu nombre de usuario público. Puede ser tu nombre real o
+                un pseudónimo.
               </FormDescription>
 
               <FormMessage />

@@ -24,7 +24,7 @@ export const useUpdateNameMutation = ({ form }: Props) => {
       if (error) return Promise.reject(error);
     },
     onSuccess: (_data, variables) => {
-      toast.success("Name updated successfully 🎉", {
+      toast.success("Nombre actualizado exitosamente 🎉", {
         duration: 10_000,
       });
 
@@ -43,8 +43,8 @@ export const useUpdateNameMutation = ({ form }: Props) => {
 
       switch (error.code) {
         default:
-          toast.error("Something went wrong 😢", {
-            description: "Please try again later",
+          toast.error("Algo salió mal 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

@@ -5,9 +5,9 @@ export const generateBackupCodesSchema = z.object({
   password: z
     .string()
     .min(8, {
-      message: "Password must be at least 8 characters",
+      message: "La contraseña debe tener al menos 8 caracteres",
     })
     .max(50, {
-      message: "Password must be at most 50 characters",
+      message: "La contraseña debe tener menos de 50 caracteres",
     }),
 });

@@ -30,7 +30,7 @@ export function MagicLinkForm() {
           name="email"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Correo electrónico</FormLabel>
 
               <div className="relative">
                 <FormControl>
@@ -65,7 +65,7 @@ export function MagicLinkForm() {
 
         <Button disabled={isPending} type="submit">
           {isPending && <LoaderIcon className="animate-spin" />}
-          Send Magic Link
+          Enviar enlace mágico
         </Button>
       </form>
     </Form>

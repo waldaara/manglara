@@ -76,7 +76,7 @@ export function UpdateUserForm({
               name="name"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Nombre</FormLabel>
 
                   <div className="relative">
                     <FormControl>
@@ -112,7 +112,7 @@ export function UpdateUserForm({
               name="username"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>Usuario</FormLabel>
 
                   <div className="relative">
                     <FormControl>
@@ -148,7 +148,7 @@ export function UpdateUserForm({
               name="email"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Correo electrónico</FormLabel>
 
                   <div className="relative">
                     <FormControl>
@@ -185,7 +185,7 @@ export function UpdateUserForm({
               name="role"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Role</FormLabel>
+                  <FormLabel>Rol</FormLabel>
 
                   <div className="relative">
                     <FormControl>
@@ -200,11 +200,11 @@ export function UpdateUserForm({
                             fieldState.invalid && "aria-invalid:true",
                           )}
                         >
-                          <SelectValue placeholder="Select a role" />
+                          <SelectValue placeholder="Selecciona un rol" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="user">User</SelectItem>
-                          <SelectItem value="admin">Admin</SelectItem>
+                          <SelectItem value="user">Usuario</SelectItem>
+                          <SelectItem value="admin">Administrador</SelectItem>
                         </SelectContent>
                       </Select>
                     </FormControl>
@@ -234,7 +234,7 @@ export function UpdateUserForm({
               ) : (
                 <SaveIcon />
               )}
-              Update User
+              Actualizar usuario
             </Button>
 
             <DrawerClose asChild>
@@ -243,7 +243,7 @@ export function UpdateUserForm({
                 variant="outline"
                 ref={updateUserDrawerCloseRef}
               >
-                Cancel
+                Cancelar
               </Button>
             </DrawerClose>
           </div>

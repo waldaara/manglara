@@ -24,7 +24,7 @@ export const useUnbanUserMutation = ({ pagination }: Props) => {
       return data;
     },
     onSuccess: (_data, _variables) => {
-      toast.success("User unbanned successfully ✅");
+      toast.success("Usuario desbloqueado exitosamente ✅");
 
       queryClient.setQueryData(
         ["user", "list", pagination],
@@ -39,8 +39,8 @@ export const useUnbanUserMutation = ({ pagination }: Props) => {
       );
     },
     onError: () => {
-      toast.error("Failed to unban user 😢", {
-        description: "Please try again later",
+      toast.error("No se pudo desbloquear al usuario 😢", {
+        description: "Por favor, inténtelo de nuevo más tarde.",
       });
     },
     onSettled: () => {

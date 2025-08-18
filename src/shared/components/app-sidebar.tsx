@@ -46,7 +46,7 @@ export const AppSidebar = () => {
             className="w-full"
             onClick={() => refetchSession()}
           >
-            Retry{" "}
+            Reintentar{" "}
             {isSessionRefetching ? (
               <LoaderIcon className="animate-spin" />
             ) : (

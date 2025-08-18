@@ -37,12 +37,12 @@ export function ResetPasswordForm({
       <Card className="bg-background border-none shadow-none">
         <CardHeader className="text-center">
           <CardTitle>
-            <TypographyH1>Reset password</TypographyH1>
+            <TypographyH1>Restablecer contraseña</TypographyH1>
           </CardTitle>
 
           <CardDescription>
             <TypographyP className="leading-normal">
-              Enter your new password to reset your account 🌴
+              Ingresa tu nueva contraseña para restablecer tu cuenta 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>
@@ -55,7 +55,7 @@ export function ResetPasswordForm({
                 name="password"
                 render={({ field, fieldState }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Contraseña</FormLabel>
 
                     <div className="relative">
                       <FormControl>
@@ -97,7 +97,7 @@ export function ResetPasswordForm({
                 name="confirmPassword"
                 render={({ field, fieldState }) => (
                   <FormItem>
-                    <FormLabel>Confirm password</FormLabel>
+                    <FormLabel>Confirmar contraseña</FormLabel>
 
                     <div className="relative">
                       <FormControl>
@@ -132,15 +132,15 @@ export function ResetPasswordForm({
 
               <Button disabled={isPending} type="submit" className="w-full">
                 {isPending && <LoaderIcon className="animate-spin" />}
-                Reset password
+                Restablecer contraseña
               </Button>
             </form>
           </Form>
 
           <div className="text-center text-sm">
-            Do you remember now?{" "}
+            ¿Ya te acordaste?{" "}
             <Link href="/sign-in" className="underline underline-offset-4">
-              Sign in
+              Iniciar sesión
             </Link>
           </div>
         </CardContent>

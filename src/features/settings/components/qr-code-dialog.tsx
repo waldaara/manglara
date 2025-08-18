@@ -77,13 +77,13 @@ export const QRCodeDialog = ({
         <DialogHeader>
           <DialogTitle>
             {showBackupCodes
-              ? "Download backup codes"
-              : "Scan the QR in your authenticator app"}
+              ? "Descargar códigos de respaldo"
+              : "Escanea el QR en tu aplicación de autenticación"}
           </DialogTitle>
           <DialogDescription>
             {showBackupCodes
-              ? "Please download your backup codes and keep them in a safe place."
-              : "Or enter your secret key manually:"}
+              ? "Por favor descarga tus códigos de respaldo y guárdalos en un lugar seguro."
+              : "O ingresa tu clave secreta manualmente:"}
           </DialogDescription>
 
           {!showBackupCodes && (
@@ -107,7 +107,7 @@ export const QRCodeDialog = ({
 
         {showBackupCodes ? (
           <Button onClick={handleDownloadBackupCodes} className="mx-auto">
-            Download backup codes
+            Descargar códigos de respaldo
           </Button>
         ) : (
           <Form {...form}>
@@ -117,10 +117,10 @@ export const QRCodeDialog = ({
                 name="code"
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel>One-Time Password</FormLabel>
+                    <FormLabel>Contraseña de un solo uso</FormLabel>
                     <FormDescription>
-                      Please enter the one-time password from your authenticator
-                      app.
+                      Por favor ingresa la contraseña de un solo uso de tu
+                      aplicación de autenticación.
                     </FormDescription>
                     <FormControl>
                       <div className="flex items-center gap-4">
@@ -147,7 +147,7 @@ export const QRCodeDialog = ({
                         >
                           {isPending && <LoaderIcon className="animate-spin" />}
                           {isError && <RotateCcwIcon />}
-                          Verify
+                          Verificar
                         </Button>
                       </div>
                     </FormControl>

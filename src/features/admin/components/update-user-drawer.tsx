@@ -32,10 +32,10 @@ export const UpdateUserDrawer = ({
 
       <DrawerContent className="flex flex-col gap-4 p-6">
         <DrawerHeader>
-          <DrawerTitle>Update User</DrawerTitle>
+          <DrawerTitle>Actualizar usuario</DrawerTitle>
 
           <DrawerDescription>
-            You are about to update {user.name}
+            Estás a punto de actualizar a {user.name}
           </DrawerDescription>
         </DrawerHeader>
 

@@ -28,10 +28,10 @@ export default async function AdminPage() {
     <ScrollArea className="h-full w-full">
       <div className="flex flex-col gap-6 pr-4 pb-16 pl-1">
         <div className="space-y-2">
-          <TypographyH1>Admin</TypographyH1>
+          <TypographyH1>Administrador</TypographyH1>
 
           <TypographyMuted>
-            Manage users, roles, and permissions across your application. 🌴
+            Gestiona usuarios, roles y permisos en toda tu aplicación. 🌴
           </TypographyMuted>
         </div>
 

@@ -17,7 +17,7 @@ export async function generateMetadata({
 }) {
   const { username } = await params;
   return {
-    title: `Manglara | Profile (@${username})`,
+    title: `Manglara | Perfil (@${username})`,
   };
 }
 
@@ -33,7 +33,7 @@ export default async function ProfilePage({
   if (error) {
     if (error.message === "User not found") return notFound();
 
-    throw new Error("Something went wrong while fetching the profile data");
+    throw new Error("Algo salió mal mientras se obtenía los datos del perfil");
   }
 
   return (

@@ -51,7 +51,7 @@ export const UpdateTwoFactorForm = () => {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <TypographyH4>Two-factor authentication</TypographyH4>
+          <TypographyH4>Autenticación de dos factores</TypographyH4>
 
           <div className="space-y-4">
             <FormField
@@ -60,9 +60,9 @@ export const UpdateTwoFactorForm = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
                   <div className="space-y-0.5">
-                    <FormLabel className="text-base">Enable 2FA</FormLabel>
+                    <FormLabel className="text-base">Habilitar 2FA</FormLabel>
                     <FormDescription>
-                      Add an extra layer of security to your account.
+                      Añade una capa extra de seguridad a tu cuenta.
                     </FormDescription>
                   </div>
 
@@ -76,7 +76,7 @@ export const UpdateTwoFactorForm = () => {
                       type="button"
                       onClick={() => refetchSession()}
                     >
-                      Retry{" "}
+                      Reintentar{" "}
                       {isSessionRefetching ? (
                         <LoaderIcon className="animate-spin" />
                       ) : (
@@ -105,14 +105,16 @@ export const UpdateTwoFactorForm = () => {
               control={form.control}
               name="password"
               render={({ field }) => (
-                <FormItem className="bg-destructive/40 flex flex-col items-start gap-4 rounded-lg p-4">
+                <FormItem className="flex flex-col items-start gap-4 rounded-lg border-2 border-dotted p-4">
                   <div className="space-y-0.5">
-                    <FormLabel className="text-base">Password</FormLabel>
+                    <FormLabel className="text-base">Contraseña</FormLabel>
 
                     <FormDescription>
-                      In order to{" "}
-                      {form.getValues("enable2FA") ? "enable" : "disable"} 2FA,
-                      please enter your password.
+                      Para{" "}
+                      {form.getValues("enable2FA")
+                        ? "habilitar"
+                        : "deshabilitar"}{" "}
+                      la 2FA, por favor ingresa tu contraseña.
                     </FormDescription>
                   </div>
 
@@ -128,7 +130,10 @@ export const UpdateTwoFactorForm = () => {
                   >
                     {isPending && <LoaderIcon className="animate-spin" />}
                     {isError && <RotateCcwIcon />}
-                    {form.getValues("enable2FA") ? "Enable" : "Disable"} 2FA
+                    {form.getValues("enable2FA")
+                      ? "Habilitar"
+                      : "Deshabilitar"}{" "}
+                    2FA
                   </Button>
                 </FormItem>
               )}

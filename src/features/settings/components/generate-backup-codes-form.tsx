@@ -25,7 +25,7 @@ export const GenerateBackupCodesForm = () => {
     isTwoFactorEnabled && (
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <TypographyH4>Backup codes</TypographyH4>
+          <TypographyH4>Códigos de respaldo</TypographyH4>
 
           <div className="space-y-4">
             <FormField
@@ -34,7 +34,7 @@ export const GenerateBackupCodesForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <div className="flex flex-wrap items-center justify-start gap-4">
-                    <FormLabel>Generate backup codes</FormLabel>
+                    <FormLabel>Generar códigos de respaldo</FormLabel>
 
                     <FormControl>
                       <Button
@@ -44,15 +44,16 @@ export const GenerateBackupCodesForm = () => {
                         variant="outline"
                         onClick={() => field.onChange(true)}
                       >
-                        Generate
+                        Generar
                       </Button>
                     </FormControl>
                   </div>
 
                   <FormDescription>
-                    Generate a set of backup codes to use if you lose your
-                    authenticator app. If you already have backup codes, this
-                    will generate a new set and invalidate the old.
+                    Genera un conjunto de códigos de respaldo para usar si
+                    pierdes tu aplicación de autenticación. Si ya tienes códigos
+                    de respaldo, esto generará un nuevo conjunto e invalidará el
+                    anterior.
                   </FormDescription>
                 </FormItem>
               )}
@@ -67,11 +68,11 @@ export const GenerateBackupCodesForm = () => {
               render={({ field }) => (
                 <FormItem className="bg-destructive/40 flex flex-col items-start gap-4 rounded-lg p-4">
                   <div className="space-y-0.5">
-                    <FormLabel className="text-base">Password</FormLabel>
+                    <FormLabel className="text-base">Contraseña</FormLabel>
 
                     <FormDescription>
-                      In order to generate backup codes, please enter your
-                      password.
+                      Para generar códigos de respaldo, por favor ingresa tu
+                      contraseña.
                     </FormDescription>
                   </div>
 
@@ -87,7 +88,7 @@ export const GenerateBackupCodesForm = () => {
                   >
                     {isPending && <LoaderIcon className="animate-spin" />}
                     {isError && <RotateCcwIcon />}
-                    Generate backup codes
+                    Generar códigos de respaldo
                   </Button>
                 </FormItem>
               )}

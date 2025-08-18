@@ -7,8 +7,8 @@ export async function SettingsAccountPage() {
   return (
     <>
       <SettingsPageHeader
-        title="Account"
-        description="Update your account settings."
+        title="Cuenta"
+        description="Actualiza la configuración de tu cuenta."
       />
 
       <UpdateNameForm />

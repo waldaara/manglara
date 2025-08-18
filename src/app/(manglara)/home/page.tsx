@@ -13,9 +13,11 @@ export default async function HomePage() {
   return (
     <main className="flex flex-col gap-6">
       <div className="space-y-2">
-        <TypographyH1>Home</TypographyH1>
+        <TypographyH1>Inicio</TypographyH1>
 
-        <TypographyMuted>Welcome to the home of Manglara. 🌴</TypographyMuted>
+        <TypographyMuted>
+          Bienvenido a la página de inicio de Manglara. 🌴
+        </TypographyMuted>
       </div>
     </main>
   );

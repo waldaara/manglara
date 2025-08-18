@@ -40,12 +40,12 @@ export function TwoFactorForm({
       <Card className="bg-background border-none shadow-none">
         <CardHeader className="text-center">
           <CardTitle>
-            <TypographyH1>Two-Factor Authentication</TypographyH1>
+            <TypographyH1>Autenticación de dos factores</TypographyH1>
           </CardTitle>
 
           <CardDescription>
             <TypographyP className="leading-normal">
-              Enter your one-time password to continue 🌴
+              Ingresa tu contraseña de un solo uso para continuar 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>
@@ -100,15 +100,15 @@ export function TwoFactorForm({
 
               <Button disabled={isPending} type="submit" className="w-full">
                 {isPending && <LoaderIcon className="animate-spin" />}
-                Verify
+                Verificar
               </Button>
             </form>
           </Form>
 
           <div className="text-center text-sm">
-            Don&apos;t have access to your authenticator app?{" "}
+            ¿No tienes acceso a tu aplicación de autenticación?{" "}
             <Link href="/recovery" className="underline underline-offset-4">
-              Use recovery code
+              Usar código de recuperación
             </Link>
           </div>
         </CardContent>

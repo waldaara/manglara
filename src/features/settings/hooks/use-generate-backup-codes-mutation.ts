@@ -39,15 +39,15 @@ export const useGenerateBackupCodesMutation = ({ form }: Props) => {
 
       URL.revokeObjectURL(url);
 
-      toast.success("Backup codes generated successfully 🎉", {
+      toast.success("Códigos de respaldo generados exitosamente 🎉", {
         duration: 10_000,
       });
 
       form.reset();
     },
     onError: () => {
-      toast.error("Failed to generate backup codes 😢", {
-        description: "Please try again later",
+      toast.error("No se pudo generar los códigos de respaldo 😢", {
+        description: "Por favor, inténtalo de nuevo más tarde.",
         duration: 10_000,
       });
     },

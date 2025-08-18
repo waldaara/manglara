@@ -5,8 +5,8 @@ import { TreePalmIcon } from "lucide-react";
 import { SignInForm } from "@/features/auth/components/sign-in-form";
 
 export const metadata: Metadata = {
-  title: "Manglara | Sign In",
-  description: "Sign in to Manglara",
+  title: "Manglara | Iniciar sesión",
+  description: "Inicia sesión en Manglara",
 };
 
 export default function SignInPage() {

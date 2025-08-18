@@ -16,10 +16,10 @@ export default function Error({ reset }: Props) {
 
   return (
     <div className="flex h-full flex-col items-center justify-center gap-4">
-      <TypographyH1 className="text-center">Something went wrong!</TypographyH1>
+      <TypographyH1 className="text-center">Algo salió mal</TypographyH1>
 
       <Button onClick={reset} className="flex items-center gap-2">
-        <RotateCcwIcon /> Reload page
+        <RotateCcwIcon /> Recargar página
       </Button>
     </div>
   );

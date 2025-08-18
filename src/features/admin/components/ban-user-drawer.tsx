@@ -32,10 +32,10 @@ export const BanUserDrawer = ({
 
       <DrawerContent className="flex flex-col gap-4 p-6">
         <DrawerHeader>
-          <DrawerTitle>Ban User</DrawerTitle>
+          <DrawerTitle>Bloquear usuario</DrawerTitle>
 
           <DrawerDescription>
-            You are about to ban {user.name}
+            Estás a punto de bloquear a {user.name}
           </DrawerDescription>
         </DrawerHeader>
 

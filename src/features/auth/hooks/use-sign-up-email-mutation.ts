@@ -34,9 +34,9 @@ export const useSignUpEmailMutation = ({ form }: Props) => {
       return data;
     },
     onSuccess: () => {
-      toast.success("Account created successfully 🎉", {
+      toast.success("Cuenta creada exitosamente 🎉", {
         description:
-          "Check your inbox (or spam folder) for the verification email.",
+          "Revisa tu bandeja de entrada (o carpeta de spam) para el correo de verificación.",
         duration: 10_000,
       });
 
@@ -48,61 +48,65 @@ export const useSignUpEmailMutation = ({ form }: Props) => {
       switch (error.code) {
         case "USERNAME_IS_ALREADY_TAKEN_PLEASE_TRY_ANOTHER":
           form.setError("username", {
-            message: "Username is already taken. Please try another.",
+            message:
+              "El nombre de usuario ya está en uso. Por favor, intenta con otro.",
           });
           return;
 
         case "USER_ALREADY_EXISTS":
           form.setError("email", {
-            message: "A user with that email already exists",
+            message: "Un usuario con ese correo electrónico ya existe",
           });
           return;
 
         case "PASSWORD_COMPROMISED":
           form.setError("password", {
             message:
-              "Password is compromised. Please choose a more secure password.",
+              "La contraseña está comprometida. Por favor, elige una contraseña más segura.",
           });
           return;
 
         case "FAILED_TO_SEND_VERIFICATION_EMAIL":
-          const toastId = toast.error("Failed to send verification email 😢", {
-            duration: 10_000,
-            action: {
-              label: "Resend email",
-              onClick: async () => {
-                const id = toast.loading("Resending email...");
+          const toastId = toast.error(
+            "No se pudo enviar el correo de verificación 😢",
+            {
+              duration: 10_000,
+              action: {
+                label: "Reenviar correo",
+                onClick: async () => {
+                  const id = toast.loading("Reenviando correo...");
 
-                const { error } = await authClient.sendVerificationEmail({
-                  email: variables.email,
-                  callbackURL: "/home",
-                });
+                  const { error } = await authClient.sendVerificationEmail({
+                    email: variables.email,
+                    callbackURL: "/home",
+                  });
 
-                if (error) {
-                  if (error.status === 429) return;
+                  if (error) {
+                    if (error.status === 429) return;
 
-                  toast.dismiss(id);
-                  toast.error("Failed to resend email 😢", {
-                    id: toastId,
+                    toast.dismiss(id);
+                    toast.error("No se pudo reenviar el correo 😢", {
+                      id: toastId,
+                      duration: 10_000,
+                    });
+                    return;
+                  }
+
+                  toast.success("Correo enviado exitosamente 🎉", {
+                    id,
+                    description:
+                      "Revisa tu bandeja de entrada (o carpeta de spam) para el correo de verificación.",
                     duration: 10_000,
                   });
-                  return;
-                }
-
-                toast.success("Email sent successfully 🎉", {
-                  id,
-                  description:
-                    "Check your inbox (or spam folder) for the verification email.",
-                  duration: 10_000,
-                });
+                },
               },
             },
-          });
+          );
           return;
 
         default:
-          toast.error("Something went wrong 😢", {
-            description: "Please try again later",
+          toast.error("Algo salió mal 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

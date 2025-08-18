@@ -7,11 +7,11 @@ interface Props {
 export const usePasswordStrengthIndicator = ({ password }: Props) => {
   const checkStrength = (pass: string) => {
     const requirements = [
-      { regex: /.{8,}/, text: "At least 8 characters" },
-      { regex: /[0-9]/, text: "At least 1 number" },
-      { regex: /[a-z]/, text: "At least 1 lowercase letter" },
-      { regex: /[A-Z]/, text: "At least 1 uppercase letter" },
-      { regex: /[^\w\s]/, text: "At least 1 special character" },
+      { regex: /.{8,}/, text: "8 o más caracteres" },
+      { regex: /[0-9]/, text: "Al menos un número" },
+      { regex: /[a-z]/, text: "Al menos una letra minúscula" },
+      { regex: /[A-Z]/, text: "Al menos una letra mayúscula" },
+      { regex: /[^\w\s]/, text: "Al menos un carácter especial" },
     ];
 
     return requirements.map((req) => ({
@@ -36,11 +36,11 @@ export const usePasswordStrengthIndicator = ({ password }: Props) => {
   };
 
   const getStrengthText = (score: number) => {
-    if (score === 0) return "Enter a password";
-    if (score <= 2) return "Weak password";
-    if (score <= 3) return "Medium password";
-    if (score <= 4) return "Strong password";
-    return "Very strong password";
+    if (score === 0) return "Ingresa una contraseña";
+    if (score <= 2) return "Contraseña débil";
+    if (score <= 3) return "Contraseña media";
+    if (score <= 4) return "Contraseña fuerte";
+    return "Contraseña muy fuerte";
   };
 
   return {

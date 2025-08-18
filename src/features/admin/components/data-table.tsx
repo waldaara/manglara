@@ -75,7 +75,7 @@ export function DataTable() {
                 <TableRow>
                   <TableCell colSpan={columns.length} className="h-24">
                     <div className="flex flex-col items-center justify-center gap-2">
-                      Something went wrong 😢
+                      Algo salió mal 😢
                       <Button
                         variant="outline"
                         onClick={() => refetch()}
@@ -85,7 +85,7 @@ export function DataTable() {
                         {isRefetching && (
                           <LoaderIcon className="animate-spin" />
                         )}
-                        Try again
+                        Intentar de nuevo
                       </Button>
                     </div>
                   </TableCell>
@@ -113,8 +113,8 @@ export function DataTable() {
                     colSpan={columns.length}
                     className="h-24 text-center"
                   >
-                    No users found in this page. 😢 <br /> Try changing the
-                    filters or going to the next page
+                    No se encontraron usuarios en esta página. 😢 <br /> Intenta
+                    cambiar los filtros o ir a la página siguiente
                   </TableCell>
                 </TableRow>
               )}

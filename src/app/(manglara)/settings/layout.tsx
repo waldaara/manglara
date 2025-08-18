@@ -11,7 +11,7 @@ import { PageWrapper } from "@/features/settings/components/page-wrapper";
 import { MobileWrapper } from "@/features/settings/components/mobile-wrapper";
 
 export const metadata: Metadata = {
-  title: "Manglara | Settings",
+  title: "Manglara | Configuraciones",
 };
 
 export default function SettingsLayout({
@@ -23,10 +23,10 @@ export default function SettingsLayout({
     <div className="flex h-full flex-col space-y-8">
       <MobileWrapper>
         <div className="space-y-2">
-          <TypographyH1>Settings</TypographyH1>
+          <TypographyH1>Configuraciones</TypographyH1>
 
           <TypographyMuted>
-            Manage your account settings and preferences. 🌴
+            Administra tus configuraciones y preferencias. 🌴
           </TypographyMuted>
         </div>
       </MobileWrapper>

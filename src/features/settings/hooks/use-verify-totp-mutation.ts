@@ -29,9 +29,12 @@ export const useVerifyTotpMutation = ({
       if (error) return Promise.reject(error);
     },
     onSuccess: () => {
-      toast.success("Two-factor authentication enabled successfully 🎉", {
-        duration: 10_000,
-      });
+      toast.success(
+        "Autenticación de dos factores habilitada exitosamente 🎉",
+        {
+          duration: 10_000,
+        },
+      );
 
       form.reset();
       setTotpURI("");
@@ -43,13 +46,13 @@ export const useVerifyTotpMutation = ({
       switch (error.code) {
         case "INVALID_TWO_FACTOR_AUTHENTICATION":
           form.setError("code", {
-            message: "Invalid one-time password",
+            message: "Código de verificación inválido",
           });
           return;
 
         default:
-          toast.error("An error occurred 😢", {
-            description: "Please try again later",
+          toast.error("Algo salió mal 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

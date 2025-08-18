@@ -43,12 +43,12 @@ export function SignUpForm({
       <Card className="bg-background border-none shadow-none">
         <CardHeader className="text-center">
           <CardTitle>
-            <TypographyH1>Sign up</TypographyH1>
+            <TypographyH1>Regístrate</TypographyH1>
           </CardTitle>
 
           <CardDescription>
             <TypographyP className="leading-normal">
-              Welcome to Manglara 🌴
+              Bienvenido a Manglara 🌴
             </TypographyP>
           </CardDescription>
         </CardHeader>
@@ -76,7 +76,7 @@ export function SignUpForm({
 
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
             <span className="bg-background text-muted-foreground relative z-10 px-2">
-              Or continue with
+              O continuar con
             </span>
           </div>
 
@@ -88,7 +88,7 @@ export function SignUpForm({
                   name="name"
                   render={({ field, fieldState }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Nombre</FormLabel>
 
                       <div className="relative">
                         <FormControl>
@@ -124,7 +124,7 @@ export function SignUpForm({
                   name="username"
                   render={({ field, fieldState }) => (
                     <FormItem>
-                      <FormLabel>Username</FormLabel>
+                      <FormLabel>Usuario</FormLabel>
 
                       <div className="relative">
                         <FormControl>
@@ -161,7 +161,7 @@ export function SignUpForm({
                 name="email"
                 render={({ field, fieldState }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>Correo electrónico</FormLabel>
 
                     <div className="relative">
                       <FormControl>
@@ -200,7 +200,7 @@ export function SignUpForm({
                 name="password"
                 render={({ field, fieldState }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Contraseña</FormLabel>
 
                     <div className="relative">
                       <FormControl>
@@ -239,18 +239,18 @@ export function SignUpForm({
 
               <Button disabled={isPending} type="submit" className="w-full">
                 {isPending && <LoaderIcon className="animate-spin" />}
-                Sign up
+                Regístrate
               </Button>
             </form>
           </Form>
 
           <div className="text-center text-sm">
-            Already have an account?{" "}
+            ¿Ya tienes una cuenta?{" "}
             <Link
               href="/sign-in"
               className="font-bold hover:underline hover:underline-offset-4"
             >
-              Sign in
+              Iniciar sesión
             </Link>
           </div>
         </CardContent>

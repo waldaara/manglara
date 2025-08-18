@@ -5,9 +5,9 @@ export const updateNameSchema = z.object({
     .string()
     .trim()
     .min(2, {
-      message: "Name must be at least 2 characters long",
+      message: "El nombre debe tener al menos 2 caracteres",
     })
     .max(50, {
-      message: "Name must be at most 50 characters long",
+      message: "El nombre debe tener menos de 50 caracteres",
     }),
 });

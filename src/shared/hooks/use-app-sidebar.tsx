@@ -21,15 +21,15 @@ export const useAppSidebar = () => {
 
   const links = useMemo(() => {
     const baseLinks = [
-      { href: "/home", label: "Home", icon: <HomeIcon /> },
+      { href: "/home", label: "Inicio", icon: <HomeIcon /> },
       {
         href: "/explore",
-        label: "Explore",
+        label: "Explorar",
         icon: <SearchIcon />,
       },
       {
         href: "/settings",
-        label: "Settings",
+        label: "Configuraciones",
         icon: <SettingsIcon />,
       },
     ];
@@ -37,7 +37,7 @@ export const useAppSidebar = () => {
     if (session?.user.role === "admin") {
       baseLinks.splice(-1, 0, {
         href: "/admin",
-        label: "Admin",
+        label: "Administrador",
         icon: <UserRoundCogIcon />,
       });
     }
@@ -45,7 +45,7 @@ export const useAppSidebar = () => {
     if (session?.user.role === "user") {
       baseLinks.splice(-1, 0, {
         href: `/${session.user.username}`,
-        label: "Profile",
+        label: "Perfil",
         icon: <UserRoundIcon />,
       });
     }

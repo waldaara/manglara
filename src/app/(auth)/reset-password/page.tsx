@@ -7,8 +7,8 @@ import { TreePalmIcon } from "lucide-react";
 import { ResetPasswordForm } from "@/features/auth/components/reset-password-form";
 
 export const metadata: Metadata = {
-  title: "Manglara | Reset Password",
-  description: "Reset your password",
+  title: "Manglara | Restablecer contraseña",
+  description: "Restablece tu contraseña",
 };
 
 //TODO: Implement ResetPasswordFormFallback, this shi is for search params

@@ -8,8 +8,8 @@ export default function SettingsSecurityPage() {
   return (
     <>
       <SettingsPageHeader
-        title="Security"
-        description="Update your account's security settings."
+        title="Seguridad"
+        description="Actualiza la configuración de seguridad de tu cuenta."
       />
 
       <UpdatePasswordForm />

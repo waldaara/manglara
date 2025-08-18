@@ -59,12 +59,13 @@ export const useEnable2FAMutation = ({
       switch (error.code) {
         case "INVALID_PASSWORD":
           form.setError("password", {
-            message: "Invalid password",
+            message: "Contraseña inválida",
           });
           return;
 
         default:
-          toast.error("Failed to enable 2FA, please try again later 😢", {
+          toast.error("No se pudo habilitar 2FA 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

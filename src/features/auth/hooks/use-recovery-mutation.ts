@@ -26,13 +26,13 @@ export const useRecoveryMutation = ({ form }: Props) => {
     },
     onSuccess: () => {
       toast.info(
-        "Please note that each recovery code can only be used once. If you have used all your recovery codes, you can generate new ones in your account settings. If you don't remember your password, this is a good time to reset it.",
+        "Por favor, ten en cuenta que cada código de recuperación solo puede usarse una vez. Si has usado todos tus códigos de recuperación, puedes generar nuevos en tus ajustes de cuenta. Si no recuerdas tu contraseña, este es un buen momento para restablecerla.",
         {
           dismissible: false,
           closeButton: true,
           duration: 20_000,
           action: {
-            label: "Go to settings",
+            label: "Ir a ajustes",
             onClick: () => router.push("/settings/security"),
           },
         },
@@ -46,12 +46,14 @@ export const useRecoveryMutation = ({ form }: Props) => {
       switch (error.code) {
         case "INVALID_BACKUP_CODE":
           form.setError("code", {
-            message: "Invalid code",
+            message: "Código inválido",
           });
           return;
 
         default:
-          toast.error("Something went wrong, please try again later 😢");
+          toast.error(
+            "Algo salió mal, por favor, inténtalo de nuevo más tarde 😢",
+          );
           return;
       }
     },

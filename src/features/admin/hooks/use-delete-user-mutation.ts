@@ -22,8 +22,8 @@ export const useDeleteUserMutation = ({ pagination }: Props) => {
       if (error) return Promise.reject(error);
     },
     onError: () => {
-      toast.error("Failed to delete user 😢", {
-        description: "Please try again later",
+      toast.error("No se pudo eliminar al usuario 😢", {
+        description: "Por favor, inténtelo de nuevo más tarde.",
       });
     },
     onSuccess: (_data, variables) => {
@@ -36,7 +36,7 @@ export const useDeleteUserMutation = ({ pagination }: Props) => {
         }),
       );
 
-      toast.success("User deleted successfully 🎉");
+      toast.success("Usuario eliminado exitosamente 🎉");
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["user", "list"] });

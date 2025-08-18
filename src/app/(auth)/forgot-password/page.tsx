@@ -5,8 +5,8 @@ import { TreePalmIcon } from "lucide-react";
 import { ForgotPasswordForm } from "@/features/auth/components/forgot-password-form";
 
 export const metadata: Metadata = {
-  title: "Manglara | Forgot Password",
-  description: "Reset your password",
+  title: "Manglara | Olvidé mi contraseña",
+  description: "Restablece tu contraseña",
 };
 
 export default function ForgotPasswordPage() {

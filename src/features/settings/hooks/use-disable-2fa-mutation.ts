@@ -26,7 +26,7 @@ export const useDisable2FAMutation = ({ form }: Props) => {
       if (error) return Promise.reject(error);
     },
     onSuccess: () => {
-      toast.success("2FA has been disabled successfully 🎉", {
+      toast.success("2FA deshabilitado exitosamente 🎉", {
         duration: 10_000,
       });
 
@@ -48,13 +48,13 @@ export const useDisable2FAMutation = ({ form }: Props) => {
       switch (error.code) {
         case "INVALID_PASSWORD":
           form.setError("password", {
-            message: "Invalid password",
+            message: "Contraseña inválida",
           });
           return;
 
         default:
-          toast.error("Failed to disable 2FA 😢", {
-            description: "Please try again later",
+          toast.error("No se pudo deshabilitar 2FA 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

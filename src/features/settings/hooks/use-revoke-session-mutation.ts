@@ -44,13 +44,14 @@ export const useRevokeSessionMutation = () => {
 
       switch (error.code) {
         case "SESSION_NOT_FOUND":
-          toast.info("The session you tried to revoke was already closed 🤓", {
+          toast.info("La sesión que intentaste revocar ya fue cerrada 🤓", {
             duration: 5_000,
           });
           return;
 
         default:
-          toast.error("Failed to revoke session, please try again later 😢", {
+          toast.error("No se pudo revocar la sesión 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 5_000,
           });
           return;

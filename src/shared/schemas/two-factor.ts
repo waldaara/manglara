@@ -2,6 +2,6 @@ import { z } from "zod";
 
 export const twoFactorSchema = z.object({
   code: z.string().min(6, {
-    message: "Your one-time password must be 6 characters.",
+    message: "El código de verificación debe tener 6 caracteres",
   }),
 });

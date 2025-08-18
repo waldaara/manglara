@@ -5,8 +5,8 @@ import { TreePalmIcon } from "lucide-react";
 import { RecoveryForm } from "@/features/auth/components/recovery-form";
 
 export const metadata: Metadata = {
-  title: "Manglara | Recovery",
-  description: "Use recovery code to access your account.",
+  title: "Manglara | Recuperación",
+  description: "Usa el código de recuperación para acceder a tu cuenta.",
 };
 
 export default function RecoveryPage() {

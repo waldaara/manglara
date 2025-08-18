@@ -26,7 +26,9 @@ export const useSignInSocialMutation = () => {
     onError: (error: AuthClientError, { provider }) => {
       if (error.status === RATE_LIMIT_ERROR_CODE) return;
 
-      toast.error(`Failed to sign in with ${provider} 😢`);
+      toast.error(`No se pudo iniciar sesión con ${provider} 😢`, {
+        description: "Por favor, inténtalo de nuevo más tarde.",
+      });
     },
   });
 };

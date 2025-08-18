@@ -21,7 +21,7 @@ export const VerifyEmail = ({ url, name }: Props) => {
   return (
     <Html>
       <Head />
-      <Preview>We gotta be sure its really you 🧐</Preview>
+      <Preview>Tenemos que asegurarnos de que realmente eres tú 🧐</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white px-2 font-sans">
           <Container className="mx-auto my-[40px] max-w-[465px] rounded-2xl border border-solid border-[#eaeaea] p-[20px]">
@@ -29,26 +29,27 @@ export const VerifyEmail = ({ url, name }: Props) => {
               <Heading className="font-extrabold">Manglara</Heading>
             </Section>
             <Heading className="mx-0 my-[30px] p-0 text-center text-[24px] font-normal text-black">
-              Verify your email address
+              Verifica tu dirección de correo electrónico
             </Heading>
             <Text className="text-[14px] leading-[24px] text-black">
-              Hello {name},
+              Hola {name},
             </Text>
             <Text className="text-[14px] leading-[24px] text-black">
-              In order to start using your account, you need to verify your
-              email address. Click the button below to verify your email address
-              (this link will expire in one hour).
+              Para comenzar a usar tu cuenta, necesitas verificar tu dirección
+              de correo electrónico. Haz clic en el botón de abajo para
+              verificar tu dirección de correo electrónico (este enlace expirará
+              en una hora).
             </Text>
             <Section className="mt-[32px] mb-[32px] text-center">
               <Button
                 className="rounded-2xl bg-black px-5 py-3 text-center text-[12px] font-semibold text-white no-underline"
                 href={url}
               >
-                Verify Email
+                Verificar correo electrónico
               </Button>
             </Section>
             <Text className="text-[14px] leading-[24px] text-black">
-              or copy and paste this URL into your browser:{" "}
+              o copia y pega esta URL en tu navegador:{" "}
               <Link
                 href={url}
                 className="text-wrap break-all text-blue-600 no-underline"

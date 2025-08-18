@@ -24,7 +24,7 @@ export const ActiveSessions = () => {
   return (
     <div className="flex flex-col gap-4">
       <TypographyH4 className="mb-4 flex items-center gap-2">
-        Active sessions {isSessionsSuccess && `(${sessions?.length})`}{" "}
+        Sesiones activas {isSessionsSuccess && `(${sessions?.length})`}{" "}
         {isSessionsFetching && (
           <LoaderIcon className="animate-spin" size={18} />
         )}
@@ -38,7 +38,7 @@ export const ActiveSessions = () => {
           type="button"
           onClick={() => refetchSessions()}
         >
-          Retry
+          Reintentar
           {isSessionsRefetching ? (
             <LoaderIcon className="animate-spin" />
           ) : (

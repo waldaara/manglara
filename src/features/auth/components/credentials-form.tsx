@@ -31,7 +31,7 @@ export function CredentialsForm() {
           name="username"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Usuario</FormLabel>
 
               <div className="relative">
                 <FormControl>
@@ -69,13 +69,13 @@ export function CredentialsForm() {
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>
-                Password
+                Contraseña
                 <Link
                   prefetch
                   href="/forgot-password"
                   className="text-foreground ml-auto text-xs underline-offset-4 hover:underline"
                 >
-                  Forgot your password?
+                  ¿Olvidaste tu contraseña?
                 </Link>
               </FormLabel>
 
@@ -110,7 +110,7 @@ export function CredentialsForm() {
 
         <Button disabled={isPending} type="submit">
           {isPending && <LoaderIcon className="animate-spin" />}
-          Sign in
+          Iniciar sesión
         </Button>
       </form>
     </Form>

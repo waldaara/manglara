@@ -29,7 +29,7 @@ export const useUpdatePasswordMutation = ({ form }: Props) => {
       if (error) return Promise.reject(error);
     },
     onSuccess: () => {
-      toast.success("Password changed successfully 🎉", {
+      toast.success("Contraseña cambiada exitosamente 🎉", {
         duration: 10_000,
       });
 
@@ -41,20 +41,20 @@ export const useUpdatePasswordMutation = ({ form }: Props) => {
       switch (error.code) {
         case "INVALID_PASSWORD":
           form.setError("currentPassword", {
-            message: "Invalid password",
+            message: "Contraseña inválida",
           });
           return;
 
         case "PASSWORD_COMPROMISED":
           form.setError("newPassword", {
             message:
-              "The password you entered has been compromised. Please choose a different password.",
+              "La contraseña que ingresaste ha sido comprometida. Por favor, elige una contraseña diferente.",
           });
           return;
 
         default:
-          toast.error("Failed to change password 😢", {
-            description: "Please try again later",
+          toast.error("No se pudo cambiar la contraseña 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

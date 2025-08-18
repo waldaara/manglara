@@ -51,13 +51,13 @@ export function DataTableRowActions({
             className="data-[state=open]:bg-muted flex h-8 w-8 p-0"
           >
             <MoreHorizontal />
-            <span className="sr-only">Open menu</span>
+            <span className="sr-only">Abrir menú</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[160px]">
           <DropdownMenuItem onSelect={handleUpdateUser}>
             <UserRoundPenIcon />
-            Edit
+            Editar
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled={isUnbarUserPending}
@@ -69,7 +69,7 @@ export function DataTableRowActions({
             ) : (
               <BanIcon />
             )}
-            {isBanned ? "Unban" : "Ban"}
+            {isBanned ? "Desbloquear" : "Bloquear"}
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled={isDeleteUserPending}
@@ -81,7 +81,7 @@ export function DataTableRowActions({
             ) : (
               <TrashIcon />
             )}
-            Delete
+            Eliminar
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

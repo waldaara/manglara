@@ -25,7 +25,7 @@ export const useUpdateUsernameMutation = ({ form }: Props) => {
       if (error) return Promise.reject(error);
     },
     onSuccess: (_data, values) => {
-      toast.success("Username updated successfully 🎉", {
+      toast.success("Nombre de usuario actualizado exitosamente 🎉", {
         duration: 10_000,
       });
 
@@ -37,13 +37,14 @@ export const useUpdateUsernameMutation = ({ form }: Props) => {
       switch (error.code) {
         case "USERNAME_IS_ALREADY_TAKEN_PLEASE_TRY_ANOTHER":
           form.setError("username", {
-            message: "Username is already taken. Please try another.",
+            message:
+              "El nombre de usuario ya está en uso. Por favor, intenta con otro.",
           });
           return;
 
         default:
-          toast.error("Failed to change username 😢", {
-            description: "Please try again later",
+          toast.error("No se pudo cambiar el nombre de usuario 😢", {
+            description: "Por favor, inténtalo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

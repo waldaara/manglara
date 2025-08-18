@@ -57,7 +57,7 @@ export function BanUserForm({
               name="banReason"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Ban Reason</FormLabel>
+                  <FormLabel>Motivo del bloqueo</FormLabel>
 
                   <div className="relative flex">
                     <FormControl>
@@ -67,7 +67,7 @@ export function BanUserForm({
                         placeholder={
                           fieldState.invalid
                             ? undefined
-                            : "Enter the reason for banning this user..."
+                            : "Ingresa el motivo para bloquear a este usuario..."
                         }
                         {...field}
                       />
@@ -95,10 +95,10 @@ export function BanUserForm({
               name="banExpiresIn"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Ban Duration (seconds)</FormLabel>
+                  <FormLabel>Duración del bloqueo (segundos)</FormLabel>
 
                   <FormDescription>
-                    Leave empty for permanent ban
+                    Dejar vacío para un bloqueo permanente
                   </FormDescription>
 
                   <div className="relative w-full">
@@ -151,7 +151,7 @@ export function BanUserForm({
               ) : (
                 <UserXIcon />
               )}
-              Ban User
+              Bloquear usuario
             </Button>
 
             <DrawerClose asChild>
@@ -160,7 +160,7 @@ export function BanUserForm({
                 variant="outline"
                 ref={banUserDrawerCloseRef}
               >
-                Cancel
+                Cancelar
               </Button>
             </DrawerClose>
           </div>

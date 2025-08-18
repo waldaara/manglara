@@ -18,8 +18,9 @@ export const useForgotPasswordMutation = () => {
       if (error) return Promise.reject(error);
     },
     onSuccess: () => {
-      toast.success("Reset link sent successfully 🎉", {
-        description: "Check your inbox (or spam folder) for the link.",
+      toast.success("Link de restablecimiento enviado exitosamente 🎉", {
+        description:
+          "Revisa tu bandeja de entrada (o carpeta de spam) para el enlace.",
         duration: 10_000,
       });
     },
@@ -28,15 +29,15 @@ export const useForgotPasswordMutation = () => {
 
       switch (error.code) {
         case "FAILED_TO_SEND_RESET_PASSWORD_EMAIL":
-          toast.error("Failed to send reset password email 😢", {
-            description: "Please try again later",
+          toast.error("No se pudo enviar el correo de restablecimiento 😢", {
+            description: "Por favor, inténtelo de nuevo más tarde.",
             duration: 10_000,
           });
           return;
 
         default:
-          toast.error("Something went wrong 😢", {
-            description: "Please try again later",
+          toast.error("Algo salió mal 😢", {
+            description: "Por favor, inténtelo de nuevo más tarde.",
             duration: 10_000,
           });
           return;

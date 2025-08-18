@@ -29,7 +29,7 @@ export const UpdatePasswordForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <TypographyH4>Change password</TypographyH4>
+        <TypographyH4>Cambiar contraseña</TypographyH4>
 
         <FormField
           disabled={isPending || !isSessionSuccess}
@@ -38,7 +38,7 @@ export const UpdatePasswordForm = () => {
           render={({ field, fieldState }) => (
             <FormItem>
               <div className="flex flex-wrap items-center justify-start gap-2">
-                <FormLabel>New password</FormLabel>
+                <FormLabel>Nueva contraseña</FormLabel>
 
                 <FormControl className="w-full sm:w-fit">
                   <Input type="password" placeholder="••••••••" {...field} />
@@ -46,8 +46,8 @@ export const UpdatePasswordForm = () => {
               </div>
 
               <FormDescription className="text-muted-foreground text-sm">
-                If you change your password, all your active sessions will be
-                logged out.
+                Si cambias tu contraseña, se cerrarán todas tus sesiones
+                activas.
               </FormDescription>
 
               {/* <FormMessage /> */}
@@ -67,11 +67,11 @@ export const UpdatePasswordForm = () => {
             render={({ field }) => (
               <FormItem className="bg-destructive/40 flex flex-col items-start gap-4 rounded-lg p-4">
                 <div className="space-y-0.5">
-                  <FormLabel className="text-base">Current password</FormLabel>
+                  <FormLabel className="text-base">Contraseña actual</FormLabel>
 
                   <FormDescription>
-                    In order to change your password, please enter your current
-                    password.
+                    Para cambiar tu contraseña, por favor ingresa tu contraseña
+                    actual.
                   </FormDescription>
                 </div>
 
@@ -88,7 +88,7 @@ export const UpdatePasswordForm = () => {
                 >
                   {isPending && <LoaderIcon className="animate-spin" />}
                   {isError && <RotateCcwIcon />}
-                  Change password
+                  Cambiar contraseña
                 </Button>
               </FormItem>
             )}

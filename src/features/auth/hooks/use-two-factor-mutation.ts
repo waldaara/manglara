@@ -31,12 +31,14 @@ export const useTwoFactorMutation = ({ form }: Props) => {
       switch (error.code) {
         case "INVALID_TWO_FACTOR_AUTHENTICATION":
           form.setError("code", {
-            message: "Invalid one-time password",
+            message: "Código de verificación inválido",
           });
           return;
 
         default:
-          toast.error("An error occurred, please try again later 😢");
+          toast.error(
+            "Algo salió mal, por favor, inténtalo de nuevo más tarde 😢",
+          );
           return;
       }
     },

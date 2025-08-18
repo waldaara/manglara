@@ -34,7 +34,7 @@ export const ActiveSessionCard = ({
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center justify-between gap-2">
-          User Agent {isCurrentSession && <Badge>Current</Badge>}
+          Agente de usuario {isCurrentSession && <Badge>Actual</Badge>}
         </CardTitle>
 
         <CardDescription>{session.userAgent}</CardDescription>
@@ -42,26 +42,26 @@ export const ActiveSessionCard = ({
 
       <CardContent className="flex flex-col gap-0 text-sm">
         <div className="flex items-center gap-2">
-          <TypographyP>IP Address:</TypographyP>
+          <TypographyP>Dirección IP:</TypographyP>
           <TypographyMuted>{session.ipAddress}</TypographyMuted>
         </div>
 
         <div className="flex items-center gap-2">
-          <TypographyP>Created At:</TypographyP>
+          <TypographyP>Creado el:</TypographyP>
           <TypographyMuted>
             {new Date(session.createdAt).toLocaleString()}
           </TypographyMuted>
         </div>
 
         <div className="flex items-center gap-2">
-          <TypographyP>Updated At:</TypographyP>
+          <TypographyP>Actualizado el:</TypographyP>
           <TypographyMuted>
             {new Date(session.updatedAt).toLocaleString()}
           </TypographyMuted>
         </div>
 
         <div className="flex items-center gap-2">
-          <TypographyP>Expires At:</TypographyP>
+          <TypographyP>Expira el:</TypographyP>
           <TypographyMuted>
             {new Date(session.expiresAt).toLocaleString()}
           </TypographyMuted>
@@ -77,7 +77,7 @@ export const ActiveSessionCard = ({
             onClick={() => handleRevokeSession(session.token)}
           >
             <MinusCircleIcon />
-            Revoke
+            Revocar
           </Button>
         </CardFooter>
       )}

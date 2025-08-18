@@ -29,11 +29,11 @@ export const useSignInForm = () => {
   const toggleSignInMethodButtonContent =
     signInMethod === "credentials" ? (
       <>
-        <WandSparklesIcon /> Magic Link
+        <WandSparklesIcon /> Enlace mágico
       </>
     ) : (
       <>
-        <IdCardIcon /> Credentials
+        <IdCardIcon /> Credenciales
       </>
     );
 
