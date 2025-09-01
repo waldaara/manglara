@@ -51,7 +51,7 @@ export const useCreateOrganizationMutation = ({
 
       queryClient.setQueryData(
         ["organization", "list"],
-        (old: Organization[]) => [...old, data],
+        (old: Organization[] = []) => [...old, data],
       );
     },
     onError: (error: AuthClientError) => {
