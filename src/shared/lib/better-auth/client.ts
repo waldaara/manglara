@@ -5,6 +5,7 @@ import {
   twoFactorClient,
   inferAdditionalFields,
   adminClient,
+  organizationClient,
 } from "better-auth/client/plugins";
 import { toast } from "sonner";
 
@@ -17,6 +18,7 @@ export const authClient = createAuthClient({
     twoFactorClient(),
     inferAdditionalFields<typeof auth>(),
     adminClient(),
+    organizationClient(),
   ],
   fetchOptions: {
     onError: async (context) => {

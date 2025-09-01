@@ -2,8 +2,8 @@
 
 import { KeyRoundIcon, UserRoundPenIcon } from "lucide-react";
 
-import { SettingsNavLink } from "@/features/settings/components/settings-nav-link";
-import { useSettingsInMobile } from "@/features/settings/hooks/use-settings-in-mobile";
+import { SubNavLink } from "@/shared/components/sub-nav-link";
+import { useInMobileWrapper } from "@/shared/hooks/use-in-mobile-wrapper";
 
 const items = [
   {
@@ -19,17 +19,19 @@ const items = [
 ];
 
 export function SettingsSidebar() {
-  const { isMobile, isMounted, isSettingsPage } = useSettingsInMobile();
+  const { isMobile, isMounted, isWrapperPage } = useInMobileWrapper({
+    wrapperPage: "/settings",
+  });
 
   if (!isMounted) return null;
 
-  if (isMobile && !isSettingsPage) return null;
+  if (isMobile && !isWrapperPage) return null;
 
   return (
     <aside className="h-full w-full md:w-max">
       <nav className="flex flex-col gap-2">
         {items.map((item) => (
-          <SettingsNavLink
+          <SubNavLink
             key={item.href}
             href={item.href}
             additionalMatches={

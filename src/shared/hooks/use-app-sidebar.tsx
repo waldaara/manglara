@@ -5,6 +5,7 @@ import {
   UserRoundIcon,
   SettingsIcon,
   UserRoundCogIcon,
+  Building2Icon,
 } from "lucide-react";
 
 import { useSession } from "@/shared/hooks/use-session";
@@ -39,6 +40,11 @@ export const useAppSidebar = () => {
         href: "/admin",
         label: "Administrador",
         icon: <UserRoundCogIcon />,
+      });
+      baseLinks.splice(-1, 0, {
+        href: "/organizations",
+        label: "Organizaciones",
+        icon: <Building2Icon />,
       });
     }
 

@@ -5,8 +5,8 @@ import { toast } from "sonner";
 import { RATE_LIMIT_ERROR_CODE } from "@/shared/constants";
 import { authClient } from "@/shared/lib/better-auth/client";
 import type { AuthClientError } from "@/shared/types";
+import { getHash } from "@/shared/utils/get-hash";
 
-import { getHash } from "@/features/auth/utils/get-hash";
 import type { SignUpVariables } from "@/features/auth/types";
 
 interface Props {

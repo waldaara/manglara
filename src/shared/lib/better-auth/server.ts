@@ -8,6 +8,7 @@ import {
   twoFactor,
   haveIBeenPwned,
   admin,
+  organization,
 } from "better-auth/plugins";
 
 import { BASE_URL } from "@/shared/constants";
@@ -16,6 +17,7 @@ import ChangeEmailVerification from "@/shared/lib/react-email/change-email-verif
 import ResetPassword from "@/shared/lib/react-email/reset-password";
 import VerifyEmail from "@/shared/lib/react-email/verify-email";
 import MagicLink from "@/shared/lib/react-email/magic-link";
+import OrganizationInvitation from "@/shared/lib/react-email/organization-invitation";
 import { resend } from "@/shared/lib/resend/server";
 import { redis } from "@/shared/lib/upstash/redis";
 
@@ -59,7 +61,7 @@ export const auth = betterAuth({
         const { error } = await resend.emails.send({
           from: "Manglara <mail@manglara.aragundy.com>",
           to: [email],
-          subject: "Sign in with Magic Link",
+          subject: "Iniciar sesión con enlace mágico",
           react: MagicLink({ url }),
         });
 
@@ -75,6 +77,34 @@ export const auth = betterAuth({
     twoFactor(),
     haveIBeenPwned(),
     admin(),
+    organization({
+      cancelPendingInvitationsOnReInvite: true,
+      requireEmailVerificationOnInvitation: true,
+      async sendInvitationEmail(data) {
+        const inviteLink = `${BASE_URL}/invitations?invitationId=${data.id}`;
+
+        const { error } = await resend.emails.send({
+          from: "Manglara <mail@manglara.aragundy.com>",
+          to: [data.email],
+          subject: "Invitación para unirse a organización",
+          react: OrganizationInvitation({
+            email: data.email,
+            inviterName: data.inviter.user.name,
+            inviterEmail: data.inviter.user.email,
+            organizationName: data.organization.name,
+            inviteLink,
+          }),
+        });
+
+        if (error) {
+          console.error(error);
+
+          throw new APIError("FAILED_DEPENDENCY", {
+            message: "Failed to send invitation email",
+          });
+        }
+      },
+    }),
   ],
   user: {
     changeEmail: {
@@ -83,7 +113,7 @@ export const auth = betterAuth({
         const { error } = await resend.emails.send({
           from: "Manglara <mail@manglara.aragundy.com>",
           to: [user.email],
-          subject: "Approve your new email address",
+          subject: "Aprobar nuevo correo electrónico",
           react: ChangeEmailVerification({ name: user.name, newEmail, url }),
         });
 
@@ -104,7 +134,7 @@ export const auth = betterAuth({
       const { error } = await resend.emails.send({
         from: "Manglara <mail@manglara.aragundy.com>",
         to: [user.email],
-        subject: "Verify your email address",
+        subject: "Verificar dirección de correo electrónico",
         react: VerifyEmail({ name: user.name, url }),
       });
 
@@ -124,7 +154,7 @@ export const auth = betterAuth({
       const { error } = await resend.emails.send({
         from: "Manglara <mail@manglara.aragundy.com>",
         to: [user.email],
-        subject: "Reset your password",
+        subject: "Restablecer contraseña",
         react: ResetPassword({ name: user.name, url }),
       });
 

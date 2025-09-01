@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { getUser } from "@/shared/actions/get-user";
 import {
   Avatar,
@@ -8,7 +10,6 @@ import {
   TypographyH1,
   TypographyMuted,
 } from "@/shared/components/ui/typography";
-import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -16,6 +17,17 @@ export async function generateMetadata({
   params: Promise<{ username: string }>;
 }) {
   const { username } = await params;
+
+  const { error } = await getUser({ username });
+
+  if (error) {
+    if (error.message === "User not found")
+      return {
+        title: "Manglara | Página no encontrada",
+        description: "Página no encontrada",
+      };
+  }
+
   return {
     title: `Manglara | Perfil (@${username})`,
   };

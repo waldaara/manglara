@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRightIcon } from "lucide-react";
 
+import { NavLinkIcon } from "@/shared/components/nav-link-icon";
 import { cn } from "@/shared/utils/cn";
 
 type Props = {
@@ -15,7 +16,7 @@ type Props = {
   additionalMatches?: string[];
 } & React.ComponentProps<typeof Link>;
 
-export const SettingsNavLink = ({
+export const SubNavLink = ({
   href,
   label,
   icon,
@@ -44,7 +45,8 @@ export const SettingsNavLink = ({
       {...props}
     >
       <div className="flex items-center gap-2">
-        {icon}
+        <NavLinkIcon icon={icon} />
+
         <span>{label}</span>
       </div>
       {includeArrow && <ArrowRightIcon />}

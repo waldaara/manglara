@@ -3,12 +3,17 @@ import { useState, useEffect } from "react";
 
 import { useIsMobile } from "@/shared/hooks/use-mobile";
 
-export const useSettingsInMobile = () => {
+export const useInMobileWrapper = ({
+  wrapperPage,
+}: {
+  wrapperPage: string;
+}) => {
   const isMobile = useIsMobile();
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
 
-  const isSettingsPage = pathname === "/settings";
+  const isWrapperPage =
+    pathname === wrapperPage || pathname === `/${wrapperPage}`;
 
   useEffect(() => {
     setIsMounted(true);
@@ -17,6 +22,6 @@ export const useSettingsInMobile = () => {
   return {
     isMounted,
     isMobile,
-    isSettingsPage,
+    isWrapperPage,
   };
 };
