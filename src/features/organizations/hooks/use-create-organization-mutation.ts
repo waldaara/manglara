@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { UseFormReturn } from "react-hook-form";
 import { toast } from "sonner";
 import slugify from "slugify";
+import { useRouter } from "next/navigation";
 
 import { authClient } from "@/shared/lib/better-auth/client";
 import { RATE_LIMIT_ERROR_CODE } from "@/shared/constants";
@@ -23,6 +24,8 @@ export const useCreateOrganizationMutation = ({
   dialogCloseRef,
 }: Props) => {
   const queryClient = useQueryClient();
+
+  const router = useRouter();
 
   return useMutation({
     mutationFn: async (variables: CreateOrganizationVariables) => {
@@ -53,6 +56,8 @@ export const useCreateOrganizationMutation = ({
         ["organization", "list"],
         (old: Organization[] = []) => [...old, data],
       );
+
+      router.refresh();
     },
     onError: (error: AuthClientError) => {
       if (error.status === RATE_LIMIT_ERROR_CODE) return;

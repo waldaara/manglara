@@ -41,6 +41,7 @@ export const useDeleteOrganizationMutation = () => {
       );
 
       router.push("/organizations");
+      router.refresh();
     },
     onError: (error: AuthClientError) => {
       switch (error.code) {
